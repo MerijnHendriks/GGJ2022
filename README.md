@@ -1,2 +1,2 @@
 # GGJ2022
-Global Game Jam 2022 - Kronni's Homies
+Global Game Jam 2022 - Kronii's Homies
