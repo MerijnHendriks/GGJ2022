@@ -15,7 +15,7 @@ namespace AudioReact
         public AudioSource AudioSource;
 
         // singleton
-        private static object tlock = null;
+        private static readonly object tlock = null;
         private static Sampler instance = null;
         public static Sampler Instance
         {
@@ -66,21 +66,16 @@ namespace AudioReact
             // get sample
             for (int i = 0; i < FrequencySamples.Length; i++)
             {
-                float value = 0;
-
                 if ((FrequencyRange)i != FrequencyRange.Decibel)
                 {
                     // get Frequency Volume
-                    value = GetFrequencyVolume(AudioSource.volume, frequencyData, (FrequencyRange)i);
+                    FrequencySamples[i] = GetFrequencyVolume(AudioSource.volume, frequencyData, (FrequencyRange)i);
                 }
                 else
                 {
                     // get RMS
-                    value = GetRMS(AudioSource.volume, outputData);
+                    FrequencySamples[i] = GetRMS(AudioSource.volume, outputData);
                 }
-
-                // assign value
-                FrequencySamples[i] = value;
             }
         }
 
