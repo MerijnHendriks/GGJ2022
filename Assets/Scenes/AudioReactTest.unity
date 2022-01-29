@@ -484,7 +484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   React:
     Range: 1
-    Sensitivity: 4
+    Sensitivity: 2
     Smoothing: 0.5
     ClampMin: 0.5
     ClampMax: 4
