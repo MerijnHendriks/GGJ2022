@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
         {
             new ActorManager(),
             new AudioReactManager(),
+            new MusicManager(),
             new SceneController()
         };
     }

@@ -1,12 +1,35 @@
+using System;
 using UnityEngine;
+
+[Serializable]
+public class AudioTrack
+{
+    public ETracks Id;
+    public AudioSource Audio;
+}
 
 public class PreloadComponent : MonoBehaviour
 {
     [SerializeField]
-    private EScenes SceneToLoad;
+    private EScenes sceneToLoad = EScenes.MainMenu;
+
+    [SerializeField]
+    private AudioTrack[] tracks;
 
     private void Start()
     {
-        GameManager.Instance.GetManager<SceneController>().LoadScene(SceneToLoad);
+        MusicManager musicManager = GameManager.Instance.GetManager<MusicManager>();
+        SceneController sceneManager = GameManager.Instance.GetManager<SceneController>();
+
+        // add songs to musicmanager
+        foreach (AudioTrack item in tracks)
+        {
+            musicManager.Add(item.Id, item.Audio);
+        }
+
+        musicManager.Play(ETracks.MainTheme);
+
+        // go to main menu
+        sceneManager.LoadScene(sceneToLoad);
     }
 }
