@@ -25,11 +25,11 @@ public class Portal : MonoBehaviour
         openPortal.SetActive(true);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.tag != "Player" || openPortal.activeInHierarchy || transform.position.x < 0)
             return;
 
-        ActorManager.GetPlayer.Teleport(nextPortal.position + Vector3.up * 2 + Vector3.right);
+        ActorManager.GetPlayer.Teleport(nextPortal.position + Vector3.up + Vector3.right);
     }
 }
