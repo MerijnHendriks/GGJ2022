@@ -8,6 +8,6 @@ public class ReactTrackComponent : MonoBehaviour
 
     private void Awake()
     {
-        Sampler.Instance.AudioSource = Track;
+        Sampler.AudioSource = Track;
     }
 }

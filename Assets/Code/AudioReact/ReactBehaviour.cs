@@ -22,7 +22,7 @@ namespace AudioReact
 
         public float GetSample()
         {
-            float sample = Sampler.Instance.GetSample(Range) * Sensitivity;
+            float sample = Sampler.GetSample(Range) * Sensitivity;
             return Mathf.Lerp(ClampMin, ClampMax, sample);
         }
     }
