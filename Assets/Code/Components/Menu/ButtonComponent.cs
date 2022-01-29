@@ -18,4 +18,9 @@ public class ButtonComponent : MonoBehaviour
     {
         sceneController.LoadScene(EScenes.InGame);
     }
+
+    public void OnClickReturn()
+    {
+        sceneController.LoadScene(EScenes.MainMenu);
+    }
 }
