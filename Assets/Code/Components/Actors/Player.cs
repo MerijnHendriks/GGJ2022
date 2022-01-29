@@ -12,6 +12,8 @@ public class Player : Actor
     private const float jumpSpeed = 2500;
     private Vector2 position;
     private Timer timer = new Timer();
+    private Timer timer2 = new Timer();
+
     private bool isJumping;
 
     protected override void Start()
@@ -24,9 +26,11 @@ public class Player : Actor
         position = new Vector2(transform.position.x, transform.position.y);
         CheckInput();
 
-        //For Testing
-        if (InputController.IsPressed("RESET"))
-            transform.position = Vector3.zero;
+        if (InputController.IsPressed("TEST"))
+        {
+            rigidBody.velocity = Vector2.zero;
+            rigidBody.position = Vector2.zero;
+        }
     }
 
     private bool IsGrounded()
@@ -70,5 +74,28 @@ public class Player : Actor
             yield return null;
         }
         isJumping = false;
+    }
+
+    public void Teleport(Vector3 position)
+    {
+        //rigidBody.MovePosition(position);
+
+        StartCoroutine(Teleporting(position));
+    }
+
+    private IEnumerator Teleporting(Vector3 position)
+    {
+        // rigidBody.position += Vector2.up * 3;//= position;
+        //rigidBody.MovePosition(position);
+        timer2.Set(1);
+        while (!timer2.Done())
+        {
+            transform.position = position;
+            rigidBody.velocity = Vector2.zero;
+            yield return null;
+        }
+
+        rigidBody.simulated = true;
+        print("Teleporting");
     }
 }

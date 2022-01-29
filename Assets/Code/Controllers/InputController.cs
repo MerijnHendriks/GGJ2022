@@ -17,7 +17,7 @@ public static class InputController
             { "MOVE_RIGHT", new KeyCode[] { KeyCode.D, KeyCode.RightArrow   } },
             { "JUMP", new KeyCode[] { KeyCode.Space } },
             //For Testing
-            { "RESET", new KeyCode[] { KeyCode.R } }
+            { "TEST", new KeyCode[] { KeyCode.R } }
         };
     }
 
