@@ -5,23 +5,25 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static bool IsPaused { get; private set; }
-
-    private static Manager[] s_managers;
-
-    private static UnityEvent s_onPause = new UnityEvent();
+    private static Manager[] managers;
+    private static UnityEvent onPause = new UnityEvent();
 
     public GameManager()
     {
         // Initializes the managers.
-        s_managers = new Manager[]
+        managers = new Manager[]
         {
+            new ActorManager(),
+            new AudioReactManager()
         };
     }
 
     private void Awake()
     {
-        foreach (Manager item in s_managers)
+        foreach (Manager item in managers)
+        {
             item.Awake();
+        }
 
         IsPaused = true;
         DontDestroyOnLoad(gameObject);
@@ -29,27 +31,38 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        foreach (Manager item in s_managers)
+        foreach (Manager item in managers)
+        {
             item.Start();
+        }
     }
 
     private void Update()
     {
-        foreach (Manager item in s_managers)
+        foreach (Manager item in managers)
+        {
             item.Update();
+        }
     }
 
     public static void Pause(bool pause)
     {
-        for (int i = 0; i < s_managers.Length; i++)
-            s_managers[i].Pause(pause);
-            
+        for (int i = 0; i < managers.Length; i++)
+        {
+            managers[i].Pause(pause);
+        }
+
         IsPaused = pause;
-        s_onPause.Invoke();
+        onPause.Invoke();
     }
 
-    public static void SubscribeToPause(UnityAction listener) => s_onPause.AddListener(listener);
+    public static void SubscribeToPause(UnityAction listener) 
+    {
+        onPause.AddListener(listener);
+    }
 
-    public static void UnSubscribeFromPause(UnityAction listener) => s_onPause.RemoveListener(listener);
-
+    public static void UnSubscribeFromPause(UnityAction listener)
+    {
+        onPause.RemoveListener(listener);
+    }
 }

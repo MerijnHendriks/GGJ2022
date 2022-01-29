@@ -6,7 +6,7 @@ using Unity.Mathematics;
 
 namespace AudioReact
 {
-    public class Sampler : MonoBehaviour
+    public class Sampler
     {
         private const int samplesAmount = 1024;
         private float frequencyMax;
@@ -33,7 +33,7 @@ namespace AudioReact
             }
         }
 
-        private void Awake()
+        public void OnInitialize()
         {
             frequencyMax = (float)AudioSettings.outputSampleRate / 2;
             FrequencySamples = new float[Enum.GetNames(typeof(FrequencyRange)).Length];
@@ -50,7 +50,7 @@ namespace AudioReact
             };
         }
 
-        private void Update()
+        public void OnUpdate()
         {
             if (AudioSource == null || AudioSource.mute)
             {
