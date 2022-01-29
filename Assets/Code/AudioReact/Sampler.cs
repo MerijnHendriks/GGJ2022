@@ -18,13 +18,15 @@ namespace AudioReact
             FrequencySamples = new float[Enum.GetNames(typeof(FrequencyRange)).Length];
             FrequencyRanges = new Dictionary<FrequencyRange, float[]>()
             {
-                { FrequencyRange.SubBase,       new float[2] { 0,    60    } },
+                // Note: range values are hertz (Hz)
+                // Name                                        Low   High
+                { FrequencyRange.SubBase,       new float[2] { 16,   60    } },
                 { FrequencyRange.Bass,          new float[2] { 60,   250   } },
                 { FrequencyRange.LowMidrange,   new float[2] { 250,  500   } },
                 { FrequencyRange.Midrange,      new float[2] { 500,  2000  } },
                 { FrequencyRange.UpperMidrange, new float[2] { 2000, 4000  } },
-                { FrequencyRange.High,          new float[2] { 4000, 6000  } },
-                { FrequencyRange.VeryHigh,      new float[2] { 6000, 20000 } },
+                { FrequencyRange.Presence,      new float[2] { 4000, 6000  } },
+                { FrequencyRange.Brilliance,    new float[2] { 6000, 20000 } },
                 { FrequencyRange.Decibel,       new float[2] { 0,    20000 } }
             };
         }
