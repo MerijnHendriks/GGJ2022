@@ -1,20 +1,40 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static bool IsPaused { get; private set; }
-    private static Manager[] managers;
-    private static UnityEvent onPause = new UnityEvent();
+    public bool IsPaused { get; private set; }
+    private Manager[] managers;
+    private UnityEvent onPause = new UnityEvent();
+
+    // singleton
+    private static GameManager instance;
+    public static GameManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<GameManager>();
+            }
+
+            if (instance == null)
+            {
+                throw new Exception($"GameManager could not be found");
+            }
+
+            return instance;
+        }
+    }
 
     public GameManager()
     {
-        // Initializes the managers.
         managers = new Manager[]
         {
             new ActorManager(),
-            new AudioReactManager()
+            new AudioReactManager(),
+            new SceneController()
         };
     }
 
@@ -45,7 +65,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static void Pause(bool pause)
+    public T GetManager<T>() where T : Manager
+    {
+        foreach (Manager item in managers)
+        {
+            if (item.GetType() == typeof(T))
+            {
+                return (T)item;
+            }
+        }
+
+        return null;
+    }
+
+    public void Pause(bool pause)
     {
         for (int i = 0; i < managers.Length; i++)
         {
@@ -56,12 +89,12 @@ public class GameManager : MonoBehaviour
         onPause.Invoke();
     }
 
-    public static void SubscribeToPause(UnityAction listener) 
+    public void SubscribeToPause(UnityAction listener) 
     {
         onPause.AddListener(listener);
     }
 
-    public static void UnSubscribeFromPause(UnityAction listener)
+    public void UnSubscribeFromPause(UnityAction listener)
     {
         onPause.RemoveListener(listener);
     }
