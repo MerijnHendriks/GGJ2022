@@ -5,13 +5,12 @@ using UnityEngine;
 public class Player : Actor
 {
     [SerializeField]
-    private Rigidbody rigidBody;
-    private float moveSpeed;
+    private Rigidbody2D rigidBody;
+    private float moveSpeed = 500;
 
     protected override void Start()
     {
         base.Start();
-
     }
 
     private void Update()
