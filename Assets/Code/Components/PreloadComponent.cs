@@ -7,6 +7,6 @@ public class PreloadComponent : MonoBehaviour
 
     private void Start()
     {
-        SceneController.LoadScene(SceneToLoad);
+        GameManager.Instance.GetManager<SceneController>().LoadScene(SceneToLoad);
     }
 }

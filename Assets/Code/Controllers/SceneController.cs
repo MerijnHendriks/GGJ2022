@@ -1,16 +1,16 @@
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public enum EScenes
 {
     // list your scenes here in build order!
     Prebuild = 0,
-    MainMenu
+    MainMenu,
+    InGame
 }
 
-public static class SceneController
+public class SceneController : Manager
 {
-    public static void LoadScene(EScenes scene)
+    public void LoadScene(EScenes scene)
     {
         SceneManager.LoadScene((int)scene);
     }
