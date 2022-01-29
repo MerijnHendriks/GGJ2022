@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace AudioReact
 {
-    public class Sampler
+    public static class Sampler
     {
         private const int samplesAmount = 1024;
-        private static float frequencyMax;
-        private static Dictionary<FrequencyRange, float[]> FrequencyRanges;
+        private static readonly float frequencyMax;
+        private static readonly Dictionary<FrequencyRange, float[]> FrequencyRanges;
         public static float[] FrequencySamples { get; private set; }
         public static AudioSource AudioSource;
 
@@ -29,7 +29,7 @@ namespace AudioReact
             };
         }
 
-        public static void OnUpdate()
+        public static void Update()
         {
             if (AudioSource == null || AudioSource.mute)
             {
