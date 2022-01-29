@@ -7,7 +7,7 @@ namespace AudioReact
     public class ReactBehaviour
     {
         public FrequencyRange Range = FrequencyRange.Decibel;
-        public float Sensitivity = 10;
+        public float Sensitivity = 1;
         public float Smoothing = 1.0f;
         public float ClampMin = 0.0f;
         public float ClampMax = 1.0f;
