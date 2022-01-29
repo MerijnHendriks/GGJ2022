@@ -10,13 +10,11 @@ public static class InputController
     {
         keymap = new Dictionary<string, KeyCode[]>()
         {
-            // bind name    list of keys 
-            { "MOVE_UP",    new KeyCode[] { KeyCode.W, KeyCode.UpArrow      } },
-            { "MOVE_DOWN",  new KeyCode[] { KeyCode.S, KeyCode.DownArrow    } },
-            { "MOVE_LEFT",  new KeyCode[] { KeyCode.A, KeyCode.LeftArrow    } },
-            { "MOVE_RIGHT", new KeyCode[] { KeyCode.D, KeyCode.RightArrow   } },
-            { "JUMP", new KeyCode[] { KeyCode.Space } },
-            //For Testing
+            // bind name             list of keys 
+            { "JUMP",  new KeyCode[] { KeyCode.W, KeyCode.UpArrow,   KeyCode.Space } },
+            { "LEFT",  new KeyCode[] { KeyCode.A, KeyCode.LeftArrow                } },
+            { "RIGHT", new KeyCode[] { KeyCode.D, KeyCode.RightArrow               } },
+            // for Testing
             { "TEST", new KeyCode[] { KeyCode.R } }
         };
     }

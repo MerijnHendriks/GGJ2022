@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : Actor
@@ -32,12 +31,12 @@ public class Player : Actor
     {
         int x = 0;
 
-        if (InputController.IsPressed("MOVE_RIGHT"))
+        if (InputController.IsPressed("RIGHT"))
         {
             x = 1;
             model.transform.rotation = Quaternion.identity;
         }
-        if (InputController.IsPressed("MOVE_LEFT"))
+        if (InputController.IsPressed("LEFT"))
         {
             x = -1;
             model.transform.rotation = Quaternion.Euler(0, 180, 0);
