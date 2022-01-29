@@ -9,11 +9,7 @@ public class Player : Actor
     private CharacterController rigidBody;
     private const float moveSpeed = 10;
     private const float jumpSpeed = 25f;
-    private Vector2 position;
     private Timer timer = new Timer();
-    private Timer timer2 = new Timer();
-
-    float jumpForce = 0;
 
     private bool isJumping;
 
