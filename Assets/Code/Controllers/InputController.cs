@@ -15,7 +15,7 @@ public static class InputController
             { "LEFT",  new KeyCode[] { KeyCode.A, KeyCode.LeftArrow                } },
             { "RIGHT", new KeyCode[] { KeyCode.D, KeyCode.RightArrow               } },
             // for Testing
-            { "TEST", new KeyCode[] { KeyCode.R } }
+            { "TEST", new KeyCode[]  { KeyCode.R } }
         };
     }
 

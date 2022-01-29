@@ -5,6 +5,7 @@ public enum EScenes
     // list your scenes here in build order!
     Prebuild = 0,
     MainMenu,
+    Intro,
     InGame
 }
 
