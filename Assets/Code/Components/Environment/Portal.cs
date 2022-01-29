@@ -10,13 +10,18 @@ public class Portal : MonoBehaviour
     private GameObject closedPortal;
 
     [SerializeField]
-    private Transform nextPortal;
+    private Vector3 nextPortal;
+    [SerializeField]
+    private BoxCollider boxCollider;
 
-    private void Update()
+    public void Disable()
     {
-        //For Testing
-        //if (InputController.IsPressed("TEST"))
-        //    OpenDoor();
+        boxCollider.enabled = false;
+    }
+
+    public void SetNextPortal(Vector3 portal)
+    {
+        nextPortal = portal;
     }
 
     public void OpenDoor()
@@ -30,6 +35,6 @@ public class Portal : MonoBehaviour
         if (other.tag != "Player" || openPortal.activeInHierarchy || transform.position.x < 0)
             return;
 
-        ActorManager.GetPlayer.Teleport(nextPortal.position + Vector3.up + Vector3.right);
+        ActorManager.GetPlayer.Teleport(nextPortal + Vector3.up + Vector3.right);
     }
 }
