@@ -13,8 +13,8 @@ public static class InputController
             // bind name    list of keys 
             { "MOVE_UP",    new KeyCode[] { KeyCode.W, KeyCode.UpArrow      } },
             { "MOVE_DOWN",  new KeyCode[] { KeyCode.S, KeyCode.DownArrow    } },
-            { "MOVE_LEFT",  new KeyCode[] { KeyCode.D, KeyCode.LeftArrow    } },
-            { "MOVE_RIGHT", new KeyCode[] { KeyCode.W, KeyCode.RightArrow   } }
+            { "MOVE_LEFT",  new KeyCode[] { KeyCode.A, KeyCode.LeftArrow    } },
+            { "MOVE_RIGHT", new KeyCode[] { KeyCode.D, KeyCode.RightArrow   } }
         };
     }
 
