@@ -231,8 +231,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   React:
     Range: 6
-    Sensitivity: 2
-    Smoothing: 0.5
+    Sensitivity: 10
+    Smoothing: 0.75
     ClampMin: 0.5
     ClampMax: 4
   Light: {fileID: 218470854}
@@ -672,8 +672,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   React:
     Range: 4
-    Sensitivity: 2
-    Smoothing: 0.5
+    Sensitivity: 10
+    Smoothing: 0.75
     ClampMin: 0.5
     ClampMax: 4
   Light: {fileID: 431384958}
@@ -902,8 +902,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   React:
     Range: 1
-    Sensitivity: 2
-    Smoothing: 0.5
+    Sensitivity: 10
+    Smoothing: 0.75
     ClampMin: 0.5
     ClampMax: 4
   Light: {fileID: 670773418}
@@ -1089,8 +1089,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   React:
     Range: 0
-    Sensitivity: 2
-    Smoothing: 0.5
+    Sensitivity: 10
+    Smoothing: 0.75
     ClampMin: 0.5
     ClampMax: 4
   Light: {fileID: 931809482}
@@ -1384,8 +1384,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   React:
     Range: 3
-    Sensitivity: 2
-    Smoothing: 0.5
+    Sensitivity: 10
+    Smoothing: 0.75
     ClampMin: 0.5
     ClampMax: 4
   Light: {fileID: 1364973663}
@@ -1497,8 +1497,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   React:
     Range: 5
-    Sensitivity: 2
-    Smoothing: 0.5
+    Sensitivity: 10
+    Smoothing: 0.75
     ClampMin: 0.5
     ClampMax: 4
   Light: {fileID: 1378201048}
@@ -2214,8 +2214,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   React:
     Range: 2
-    Sensitivity: 2
-    Smoothing: 0.5
+    Sensitivity: 10
+    Smoothing: 0.75
     ClampMin: 0.5
     ClampMax: 4
   Light: {fileID: 2051732944}
