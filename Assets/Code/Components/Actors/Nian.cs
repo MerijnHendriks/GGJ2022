@@ -8,9 +8,17 @@ public class Nian : Actor
     private CharacterController characterController;
     private const float movementSpeed = 5;
 
+    protected override void Start()
+    {
+        base.Start();
+        moveDirection = (transform.rotation.y == 0 ? MoveDirection.MoveRight : MoveDirection.MoveLeft);
+    }
+
     private void Update()
     {
-        //if(Physics.Raycast(Vector3.down, transform.position + Vector3.right * 0.5f))
-        characterController.Move(new Vector2(movementSpeed, Physics.gravity.y) * Time.deltaTime);
+        characterController.Move(new Vector2(movementSpeed * (int)moveDirection, Physics.gravity.y) * Time.deltaTime);
+        if (transform.localPosition.y < -1 || transform.position.x < -11.5f || transform.position.x > 11.5f)
+            Destroy(gameObject);
+
     }
 }

@@ -4,6 +4,9 @@ using UnityEngine;
 public class Player : Actor
 {
     [SerializeField]
+    private Camera camera;
+    public static Camera GetCamera { get; private set; }
+    [SerializeField]
     private Transform model;
     [SerializeField]
     private CharacterController rigidBody;
@@ -12,6 +15,11 @@ public class Player : Actor
     private Timer timer = new Timer();
 
     private bool isJumping;
+
+    private void Awake()
+    {
+        GetCamera = camera;
+    }
 
     protected override void Start()
     {

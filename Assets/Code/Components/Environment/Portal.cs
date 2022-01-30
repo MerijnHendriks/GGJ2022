@@ -22,14 +22,23 @@ public class Portal : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(timer.Done() + " " + meshRenderer.isVisible);
-        if (timer.Done() && meshRenderer.isVisible)
+        //Debug.Log(timer.Done() + " " + meshRenderer.isVisible);
+        if (timer.Done() && PortalIsInView())
         {
             timer.Set(3);
-            GameObject instance = Instantiate(nian, transform.position + transform.right + transform.up, Quaternion.identity);
-            if (transform.position.x < 0)
+            GameObject instance = Instantiate(nian, transform.position + transform.right + transform.up, Quaternion.identity, transform);
+            if (transform.position.x > 0)
                 instance.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
+    }
+
+    private bool PortalIsInView()
+    {
+        Vector2 screenPosition = Player.GetCamera.WorldToScreenPoint(transform.position);
+        if (screenPosition.x > 0 && screenPosition.x < Player.GetCamera.pixelWidth)
+            if (screenPosition.y > 0 && screenPosition.y < Player.GetCamera.pixelHeight)
+                return true;
+        return false;
     }
 
     public void Disable()

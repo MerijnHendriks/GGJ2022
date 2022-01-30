@@ -312,7 +312,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 567268156}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.237848, y: 17.99776, z: 0}
+  m_LocalPosition: {x: 13, y: 17.99776, z: 0}
   m_LocalScale: {x: 1, y: 100, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -350,6 +350,8 @@ MonoBehaviour:
   map: {fileID: 2800000, guid: c40e3ed9fae40264da605c64b5ed6856, type: 3}
   portal: {fileID: 3574995948804440788, guid: 387ecea928129c64a98c2b45e91acc3c, type: 3}
   platform: {fileID: 3687201956501902974, guid: 8064c41013a9a0c47b64435008f7e903, type: 3}
+  smallJump: {fileID: 5194770958140304336, guid: c7022adbb54926a4e84d3cd189263eb3, type: 3}
+  bigJump: {fileID: 3647144370637448887, guid: cd01f01b9dbbe3745ab5d01eebf2633f, type: 3}
 --- !u!4 &575247616
 Transform:
   m_ObjectHideFlags: 0
@@ -975,6 +977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9247853f56631744950b7af11e96d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 2064951487}
   model: {fileID: 2056577232}
   rigidBody: {fileID: 1314012545}
 --- !u!143 &1314012545
@@ -1381,7 +1384,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862231244}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.762152, y: 17.99776, z: 0}
+  m_LocalPosition: {x: -13, y: 17.99776, z: 0}
   m_LocalScale: {x: 1, y: 100, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

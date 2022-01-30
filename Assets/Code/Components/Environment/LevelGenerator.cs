@@ -12,6 +12,11 @@ public class LevelGenerator : MonoBehaviour
     private GameObject platform;
     private Vector2 platformSize = new Vector2(2.5f, 2.5f);
 
+    [SerializeField]
+    private GameObject smallJump;
+    [SerializeField]
+    private GameObject bigJump;
+
     private void Awake()
     {
         Generate();
@@ -28,6 +33,10 @@ public class LevelGenerator : MonoBehaviour
             {
                 if (pixels[index].r == 1)
                     SpawnPlatform(x, y);
+                if (pixels[index].b == 1)
+                    SpawnBigJump(x, y);
+                if (pixels[index].g == 1)
+                    SpawnSmallJump(x, y);
                 index++;
             }
         }
@@ -40,6 +49,20 @@ public class LevelGenerator : MonoBehaviour
         Instantiate(platform, startPosition + position, Quaternion.identity);
     }
 
+    private void SpawnSmallJump(int x, int y)
+    {
+        Vector2 startPosition = new Vector2(-map.width * platformSize.x * 0.5f + platformSize.x * 0.5f, 0);
+        Vector2 position = new Vector2(platformSize.x * x, platformSize.y * y);
+        Instantiate(smallJump, startPosition + position, Quaternion.identity);
+    }
+
+    private void SpawnBigJump(int x, int y)
+    {
+        Vector2 startPosition = new Vector2(-map.width * platformSize.x * 0.5f + platformSize.x * 0.5f, 0);
+        Vector2 position = new Vector2(platformSize.x * x + platformSize.x * 0.5f, platformSize.y * y);
+        Instantiate(bigJump, startPosition + position, Quaternion.identity);
+    }
+
     private void SpawnPortals(int floors)
     {
         Vector3 leftPortalPosition = Vector3.zero;
@@ -50,6 +73,7 @@ public class LevelGenerator : MonoBehaviour
             if (i != floors)
             {
                 rightPortal = Instantiate(portal, new Vector3(11.75f, i * 10 + 0.25f, 0), Quaternion.identity);
+                rightPortal.transform.rotation = Quaternion.Euler(0, 180, 0);
                 rightPortal.SetNextPortal(leftPortalPosition);
             }
             if (i != 0)
