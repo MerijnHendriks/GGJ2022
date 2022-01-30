@@ -18,4 +18,14 @@ public class ButtonComponent : MonoBehaviour
     {
         sceneController.LoadScene(EScenes.InGame);
     }
+
+    public void OnClickCredits()
+    {
+        sceneController.LoadScene(EScenes.Credits);
+    }
+
+    public void OnClickReturn()
+    {
+        sceneController.LoadScene(EScenes.MainMenu);
+    }
 }

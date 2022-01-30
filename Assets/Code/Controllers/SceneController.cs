@@ -6,7 +6,10 @@ public enum EScenes
     Prebuild = 0,
     MainMenu,
     Intro,
-    InGame
+    InGame,
+    GameWon,
+    GameOver,
+    Credits
 }
 
 public class SceneController : Manager

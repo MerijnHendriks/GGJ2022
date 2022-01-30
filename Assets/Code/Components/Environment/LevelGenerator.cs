@@ -52,7 +52,7 @@ public class LevelGenerator : MonoBehaviour
                 //Last portal
                 if (leftPortalPosition == Vector3.zero)
                 {
-                    //Game Completed.
+                    GameManager.Instance.GetManager<SceneController>().LoadScene(EScenes.GameWon);
                 }
                 else
                 {
