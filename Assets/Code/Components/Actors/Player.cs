@@ -16,6 +16,8 @@ public class Player : Actor
 
     [SerializeField]
     private AudioSource jumpAudio;
+    [SerializeField]
+    private Animator animator;
 
     private bool isJumping;
 
@@ -53,6 +55,11 @@ public class Player : Actor
             StartCoroutine(Jump());
 
         rigidBody.Move(new Vector3(x * moveSpeed, isJumping ? Physics.gravity.y + jumpSpeed : Physics.gravity.y, 0) * Time.deltaTime);
+
+        if (x == 0 && animator.enabled)
+            animator.enabled = false;
+        else if (x != 0 && !animator.enabled)
+            animator.enabled = true;
     }
 
     private IEnumerator Jump()
