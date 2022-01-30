@@ -57,6 +57,8 @@ public class Player : Actor
     {
         StartCoroutine(Teleporting(position));
         transform.position = position;
+        if(position == Vector3.zero)
+            GameManager.Instance.GetManager<SceneController>().LoadScene(EScenes.GameWon);
     }
 
     private IEnumerator Teleporting(Vector3 position)

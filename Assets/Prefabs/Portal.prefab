@@ -48,8 +48,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openPortal: {fileID: 4421837804348790279}
   closedPortal: {fileID: 4421837804552757772}
-  nextPortal: {fileID: 0}
+  meshRenderer: {fileID: 2764500428534446034}
+  nextPortal: {x: 0, y: 0, z: 0}
   boxCollider: {fileID: 3574995948804440789}
+  nian: {fileID: 0}
 --- !u!65 &3574995948804440789
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -227,5 +229,10 @@ GameObject:
 --- !u!4 &3897397783537781949 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 00cdd002b8ec2704f8129b184fc1bfc3, type: 3}
+  m_PrefabInstance: {fileID: 3574995949486304086}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &2764500428534446034 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 00cdd002b8ec2704f8129b184fc1bfc3, type: 3}
   m_PrefabInstance: {fileID: 3574995949486304086}
   m_PrefabAsset: {fileID: 0}

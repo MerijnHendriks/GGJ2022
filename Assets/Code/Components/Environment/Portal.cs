@@ -8,11 +8,27 @@ public class Portal : MonoBehaviour
     private GameObject openPortal;
     [SerializeField]
     private GameObject closedPortal;
+    [SerializeField]
+    private MeshRenderer meshRenderer;
 
     [SerializeField]
     private Vector3 nextPortal;
     [SerializeField]
     private BoxCollider boxCollider;
+
+    private Timer timer;
+    [SerializeField]
+    private GameObject nian;
+
+    private void Update()
+    {
+        return;
+        if (timer.Done() && meshRenderer.isVisible)
+        {
+            timer.Set(3);
+            Instantiate(nian, transform.position + transform.right, Quaternion.identity);
+        }
+    }
 
     public void Disable()
     {

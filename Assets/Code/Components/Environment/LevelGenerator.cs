@@ -49,16 +49,8 @@ public class LevelGenerator : MonoBehaviour
         {
             if (i != floors)
             {
-                //Last portal
-                if (leftPortalPosition == Vector3.zero)
-                {
-                    GameManager.Instance.GetManager<SceneController>().LoadScene(EScenes.GameWon);
-                }
-                else
-                {
-                    rightPortal = Instantiate(portal, new Vector3(11.75f, i * 10 + 0.25f, 0), Quaternion.identity);
-                    rightPortal.SetNextPortal(leftPortalPosition);
-                }
+                rightPortal = Instantiate(portal, new Vector3(11.75f, i * 10 + 0.25f, 0), Quaternion.identity);
+                rightPortal.SetNextPortal(leftPortalPosition);
             }
             if (i != 0)
             {
