@@ -27,8 +27,6 @@ public class PreloadComponent : MonoBehaviour
             musicManager.Add(item.Id, item.Audio);
         }
 
-        musicManager.Play(ETracks.MainTheme);
-
         // go to main menu
         sceneManager.LoadScene(sceneToLoad);
     }

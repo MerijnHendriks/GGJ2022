@@ -4,7 +4,11 @@ using AudioReact;
 
 public enum ETracks
 {
-    MainTheme = 0
+    MainMenu = 0,
+    InGame,
+    GameWon,
+    GameOver,
+    Credits
 }
 
 public class MusicManager : Manager
