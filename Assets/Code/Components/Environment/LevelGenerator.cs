@@ -65,7 +65,7 @@ public class LevelGenerator : MonoBehaviour
 
     private void SpawnPortals(int floors)
     {
-        Vector3 leftPortalPosition = Vector3.zero;
+        Portal leftPortal = null;// = Vector3.zero;
         Portal rightPortal;
 
         for (int i = floors - 1; i >= 0; i--)
@@ -74,12 +74,12 @@ public class LevelGenerator : MonoBehaviour
             {
                 rightPortal = Instantiate(portal, new Vector3(11.75f, i * 10 + 0.25f, 0), Quaternion.identity);
                 rightPortal.transform.rotation = Quaternion.Euler(0, 180, 0);
-                rightPortal.SetNextPortal(leftPortalPosition);
+                rightPortal.SetNextPortal(leftPortal);
             }
             if (i != 0)
             {
-                Portal leftPortal = Instantiate(portal, new Vector3(-11.75f, i * 10 + 0.25f, 0), Quaternion.identity);
-                leftPortalPosition = leftPortal.transform.position;
+                Portal instance = Instantiate(portal, new Vector3(-11.75f, i * 10 + 0.25f, 0), Quaternion.identity);
+                leftPortal = instance;
                 leftPortal.Disable();
             }
         }
