@@ -46,21 +46,21 @@ public class LevelGenerator : MonoBehaviour
     {
         Vector2 startPosition = new Vector2(-map.width * platformSize.x * 0.5f + platformSize.x * 0.5f, 0);
         Vector2 position = new Vector2(platformSize.x * x, platformSize.y * y);
-        Instantiate(platform, startPosition + position, Quaternion.identity);
+        Instantiate(platform, startPosition + position, Quaternion.identity, transform);
     }
 
     private void SpawnSmallJump(int x, int y)
     {
         Vector2 startPosition = new Vector2(-map.width * platformSize.x * 0.5f + platformSize.x * 0.5f, 0);
         Vector2 position = new Vector2(platformSize.x * x, platformSize.y * y);
-        Instantiate(smallJump, startPosition + position, Quaternion.identity);
+        Instantiate(smallJump, startPosition + position, Quaternion.identity, transform);
     }
 
     private void SpawnBigJump(int x, int y)
     {
         Vector2 startPosition = new Vector2(-map.width * platformSize.x * 0.5f + platformSize.x * 0.5f, 0);
         Vector2 position = new Vector2(platformSize.x * x + platformSize.x * 0.5f, platformSize.y * y);
-        Instantiate(bigJump, startPosition + position, Quaternion.identity);
+        Instantiate(bigJump, startPosition + position, Quaternion.identity, transform);
     }
 
     private void SpawnPortals(int floors)
@@ -72,13 +72,13 @@ public class LevelGenerator : MonoBehaviour
         {
             if (i != floors)
             {
-                rightPortal = Instantiate(portal, new Vector3(11.75f, i * 10 + 0.25f, 0), Quaternion.identity);
+                rightPortal = Instantiate(portal, new Vector3(11.75f, i * 10 + 0.25f, 0), Quaternion.identity, transform);
                 rightPortal.transform.rotation = Quaternion.Euler(0, 180, 0);
                 rightPortal.SetNextPortal(leftPortal);
             }
             if (i != 0)
             {
-                Portal instance = Instantiate(portal, new Vector3(-11.75f, i * 10 + 0.25f, 0), Quaternion.identity);
+                Portal instance = Instantiate(portal, new Vector3(-11.75f, i * 10 + 0.25f, 0), Quaternion.identity, transform);
                 leftPortal = instance;
                 leftPortal.SetLeftPortal(rightPortal);
                 leftPortal.Disable();
