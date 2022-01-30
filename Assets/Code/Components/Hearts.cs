@@ -21,7 +21,7 @@ public class Hearts : MonoBehaviour
         heartCount--;
         hearts[heartCount].gameObject.SetActive(false);
 
-        if (heartCount == 1)
+        if (heartCount == 0)
             GameManager.Instance.GetManager<SceneController>().LoadScene(EScenes.GameOver);
     }
 
