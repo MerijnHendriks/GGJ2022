@@ -84,8 +84,13 @@ public class Portal : MonoBehaviour
         if (other.tag != "Player" || openPortal.activeInHierarchy || transform.position.x < 0)
             return;
 
-        currentFloor[0] = nextPortal;
-        currentFloor[1] = nextPortal.leftPortal;
-        ActorManager.GetPlayer.Teleport(nextPortal.transform.position + Vector3.up + Vector3.right);
+        if (nextPortal)
+        {
+            currentFloor[0] = nextPortal;
+            currentFloor[1] = nextPortal.leftPortal;
+            ActorManager.GetPlayer.Teleport(nextPortal.transform.position + Vector3.up + Vector3.right);
+        }
+        else
+            ActorManager.GetPlayer.Teleport(Vector3.zero);
     }
 }
