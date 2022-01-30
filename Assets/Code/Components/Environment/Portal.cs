@@ -16,17 +16,19 @@ public class Portal : MonoBehaviour
     [SerializeField]
     private BoxCollider boxCollider;
 
-    private Timer timer;
+    private Timer timer = new Timer();
     [SerializeField]
     private GameObject nian;
 
     private void Update()
     {
-        return;
+        Debug.Log(timer.Done() + " " + meshRenderer.isVisible);
         if (timer.Done() && meshRenderer.isVisible)
         {
             timer.Set(3);
-            Instantiate(nian, transform.position + transform.right, Quaternion.identity);
+            GameObject instance = Instantiate(nian, transform.position + transform.right + transform.up, Quaternion.identity);
+            if (transform.position.x < 0)
+                instance.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
     }
 
