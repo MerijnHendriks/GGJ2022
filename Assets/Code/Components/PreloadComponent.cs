@@ -19,15 +19,11 @@ public class PreloadComponent : MonoBehaviour
     private void Start()
     {
         MusicManager musicManager = GameManager.Instance.GetManager<MusicManager>();
-        SceneController sceneManager = GameManager.Instance.GetManager<SceneController>();
 
         // add songs to musicmanager
         foreach (AudioTrack item in tracks)
         {
             musicManager.Add(item.Id, item.Audio);
         }
-
-        // go to main menu
-        sceneManager.LoadScene(sceneToLoad);
     }
 }
