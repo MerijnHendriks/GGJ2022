@@ -217,7 +217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 20662214}
   english: Play!
-  chinese: "\u73A9\uFF01"
+  chinese: "\u6E38\u73A9\uFF01"
 --- !u!1 &108598560
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 108598562}
   english: Credits
-  chinese: "\u5B66\u5206"
+  chinese: "\u9E23\u8C22"
 --- !u!1 &194963255
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,7 +651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 277683650}
-  english: "\u5730\u533A\uFF1A\u4E2D\u6587"
+  english: "\u8BED\u8A00\uFF1A\u4E2D\u6587"
   chinese: 'Locale: English'
 --- !u!1 &627345180
 GameObject:
@@ -1681,7 +1681,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Nian Jump
+  m_Text: Nian Impact
 --- !u!222 &1849906688
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1703,5 +1703,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1849906687}
-  english: Nian Jump
-  chinese: "\u5FF5\u8DF3"
+  english: Nian Impact
+  chinese: "\u5E74\u5F71\u54CD"

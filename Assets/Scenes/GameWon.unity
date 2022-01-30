@@ -278,10 +278,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 1
     m_MaxSize: 48
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -289,7 +289,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6BD4\u8D5B\u8D62\u4E86\uFF01\nGame won!"
+  m_Text: "\u6BD4\u8D5B\u8D62\u4E86\n\u4F60\u7EC8\u4E8E\u6253\u8D25\u4E86\u5E74\u517D\uFF01\u6210\u529F\u4FDD\u536B\u4E86\u6751\u5E84\u5E76\u6551\u51FA\u4E86\u4F60\u59B9\u59B9\uFF0C\u5E74\u517D\u8FDC\u79BB\u4E86\u4EBA\u95F4\u5E76\u4E0D\u518D\u51FA\u6765\u6363\u4E71\uFF0C\u611F\u8C22\u6E38\u73A9\uFF01\n\nGAME
+    WON\nYou finally defeat Nian. Saved your sister and protect village. The beast
+    run away from people and hide into shadows forever. Thanks for playing!"
 --- !u!222 &474103345
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -596,7 +598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1275535433}
   english: Return to main menu
-  chinese: "\u8FD4\u56DE\u4E3B\u83DC\u5355"
+  chinese: "\u8FD4\u56DE\u5230\u4E3B\u83DC\u5355"
 --- !u!1 &1461768127
 GameObject:
   m_ObjectHideFlags: 0

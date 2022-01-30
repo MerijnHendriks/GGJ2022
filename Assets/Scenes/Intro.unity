@@ -747,7 +747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1247087691}
   english: Ready!
-  chinese: Readyru!
+  chinese: "\u51C6\u5907!"
 --- !u!1 &1571642944
 GameObject:
   m_ObjectHideFlags: 0
