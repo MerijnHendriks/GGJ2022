@@ -367,6 +367,7 @@ GameObject:
   - component: {fileID: 384563182}
   - component: {fileID: 384563184}
   - component: {fileID: 384563183}
+  - component: {fileID: 384563185}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -435,6 +436,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384563181}
   m_CullTransparentMesh: 1
+--- !u!114 &384563185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384563181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 955fbfbcc5fbf894a84e251e94a725e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 384563183}
+  english: Return to main menu
+  chinese: "\u8FD4\u56DE\u4E3B\u83DC\u5355"
 --- !u!1 &520718680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,7 +1176,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Game over!
+  m_Text: "\u6E38\u620F\u7ED3\u675F\uFF01\nGame over!"
 --- !u!222 &2086919192
 CanvasRenderer:
   m_ObjectHideFlags: 0
