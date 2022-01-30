@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1157686508}
-  m_IndirectSpecularColor: {r: 0.2846214, g: 0.37120992, b: 0.498806, a: 1}
+  m_IndirectSpecularColor: {r: 0.21833551, g: 0.23053706, b: 0.17141677, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1183,8 +1183,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   React:
     Range: 0
-    Sensitivity: 2
-    Smoothing: 0.5
+    Sensitivity: 10
+    Smoothing: 0.75
     ClampMin: 0.5
     ClampMax: 4
   Light: {fileID: 854838677}
@@ -1296,8 +1296,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   React:
     Range: 5
-    Sensitivity: 2
-    Smoothing: 0.5
+    Sensitivity: 10
+    Smoothing: 0.75
     ClampMin: 0.5
     ClampMax: 4
   Light: {fileID: 928885917}
@@ -1409,8 +1409,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   React:
     Range: 6
-    Sensitivity: 2
-    Smoothing: 0.5
+    Sensitivity: 10
+    Smoothing: 0.75
     ClampMin: 0.5
     ClampMax: 4
   Light: {fileID: 977524278}
@@ -1632,7 +1632,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1157686509}
   - component: {fileID: 1157686508}
-  - component: {fileID: 1157686510}
   m_Layer: 0
   m_Name: Sun
   m_TagString: Untagged
@@ -1716,25 +1715,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 1, y: -30, z: 0}
---- !u!114 &1157686510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157686507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8dfaf00b688547459b933ebce660256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  React:
-    Range: 1
-    Sensitivity: 2
-    Smoothing: 0.5
-    ClampMin: 0.5
-    ClampMax: 4
-  Light: {fileID: 1157686508}
 --- !u!1 &1256222024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1989,8 +1969,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   React:
     Range: 4
-    Sensitivity: 2
-    Smoothing: 0.5
+    Sensitivity: 10
+    Smoothing: 0.75
     ClampMin: 0.5
     ClampMax: 4
   Light: {fileID: 1281010520}
@@ -2102,8 +2082,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   React:
     Range: 2
-    Sensitivity: 2
-    Smoothing: 0.5
+    Sensitivity: 10
+    Smoothing: 0.75
     ClampMin: 0.5
     ClampMax: 4
   Light: {fileID: 1421528346}
@@ -2651,8 +2631,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   React:
     Range: 1
-    Sensitivity: 2
-    Smoothing: 0.5
+    Sensitivity: 10
+    Smoothing: 0.75
     ClampMin: 0.5
     ClampMax: 4
   Light: {fileID: 2018568686}
@@ -2801,8 +2781,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   React:
     Range: 3
-    Sensitivity: 2
-    Smoothing: 0.5
+    Sensitivity: 10
+    Smoothing: 0.75
     ClampMin: 0.5
     ClampMax: 4
   Light: {fileID: 2145086602}

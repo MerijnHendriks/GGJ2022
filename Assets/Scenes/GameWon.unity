@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1882506047}
-  m_IndirectSpecularColor: {r: 0.2846214, g: 0.37120992, b: 0.498806, a: 1}
+  m_IndirectSpecularColor: {r: 0.21833551, g: 0.23053706, b: 0.17141677, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -682,8 +682,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   React:
     Range: 1
-    Sensitivity: 2
-    Smoothing: 0.5
+    Sensitivity: 10
+    Smoothing: 0.75
     ClampMin: 0.5
     ClampMax: 4
   Light: {fileID: 1017101358}
@@ -1351,8 +1351,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   React:
     Range: 4
-    Sensitivity: 2
-    Smoothing: 0.5
+    Sensitivity: 10
+    Smoothing: 0.75
     ClampMin: 0.5
     ClampMax: 4
   Light: {fileID: 1468636506}
@@ -1464,8 +1464,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   React:
     Range: 3
-    Sensitivity: 2
-    Smoothing: 0.5
+    Sensitivity: 10
+    Smoothing: 0.75
     ClampMin: 0.5
     ClampMax: 4
   Light: {fileID: 1533566018}
@@ -1577,8 +1577,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   React:
     Range: 5
-    Sensitivity: 2
-    Smoothing: 0.5
+    Sensitivity: 10
+    Smoothing: 0.75
     ClampMin: 0.5
     ClampMax: 4
   Light: {fileID: 1577732038}
@@ -1690,8 +1690,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   React:
     Range: 0
-    Sensitivity: 2
-    Smoothing: 0.5
+    Sensitivity: 10
+    Smoothing: 0.75
     ClampMin: 0.5
     ClampMax: 4
   Light: {fileID: 1701169670}
@@ -2138,8 +2138,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   React:
     Range: 2
-    Sensitivity: 2
-    Smoothing: 0.5
+    Sensitivity: 10
+    Smoothing: 0.75
     ClampMin: 0.5
     ClampMax: 4
   Light: {fileID: 1944306900}
@@ -2295,8 +2295,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   React:
     Range: 6
-    Sensitivity: 2
-    Smoothing: 0.5
+    Sensitivity: 10
+    Smoothing: 0.75
     ClampMin: 0.5
     ClampMax: 4
   Light: {fileID: 2107924978}
