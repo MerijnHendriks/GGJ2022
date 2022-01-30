@@ -11,28 +11,37 @@ public class Portal : MonoBehaviour
     [SerializeField]
     private MeshRenderer meshRenderer;
 
-    [SerializeField]
     private Portal nextPortal;
+    private Portal leftPortal;
     [SerializeField]
     private BoxCollider boxCollider;
 
     private Timer timer = new Timer();
     [SerializeField]
     private GameObject nian;
-    private static Portal currentFloor;
+    private static Portal[] currentFloor = new Portal[2];
 
     private void Update()
     {
         //Debug.Log(timer.Done() + " " + meshRenderer.isVisible);
         if (!PortalIsInView())
             return;
-        if (timer.Done() && !PlayerIsTooClose() && currentFloor == this)
+        if (timer.Done() && !PlayerIsTooClose() && PortalIsOnCurrentFloor())
         {
             timer.Set(3);
             GameObject instance = Instantiate(nian, transform.position + transform.right + transform.up, Quaternion.identity, transform);
             if (transform.position.x > 0)
                 instance.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
+        //Debug.Log(currentFloor[0] + " : " + currentFloor[1]);
+    }
+
+    private bool PortalIsOnCurrentFloor()
+    {
+        for (int i = 0; i < currentFloor.Length; i++)
+            if (currentFloor[i] == this)
+                return true;
+        return false;
     }
 
     private bool PortalIsInView()
@@ -59,6 +68,11 @@ public class Portal : MonoBehaviour
         nextPortal = portal;
     }
 
+    public void SetLeftPortal(Portal portal)
+    {
+        leftPortal = portal;
+    }
+
     public void OpenDoor()
     {
         closedPortal.SetActive(false);
@@ -70,7 +84,8 @@ public class Portal : MonoBehaviour
         if (other.tag != "Player" || openPortal.activeInHierarchy || transform.position.x < 0)
             return;
 
-        currentFloor = nextPortal;
+        currentFloor[0] = nextPortal;
+        currentFloor[1] = nextPortal.leftPortal;
         ActorManager.GetPlayer.Teleport(nextPortal.transform.position + Vector3.up + Vector3.right);
     }
 }
