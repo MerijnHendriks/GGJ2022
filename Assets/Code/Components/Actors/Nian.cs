@@ -8,6 +8,9 @@ public class Nian : Actor
     private CharacterController characterController;
     private const float movementSpeed = 5;
 
+    [SerializeField]
+    private AudioSource jumpAudio;
+
     protected override void Start()
     {
         base.Start();
@@ -21,6 +24,12 @@ public class Nian : Actor
     //    if (other.transform.tag == "Player")
     //        print("LoseHeart");
     //}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+       // if (collision.transform.tag == "Jump")
+            jumpAudio.Play();
+    }
 
     private void Update()
     {

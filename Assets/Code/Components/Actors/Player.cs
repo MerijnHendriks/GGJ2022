@@ -4,8 +4,6 @@ using UnityEngine;
 public class Player : Actor
 {
     [SerializeField]
-    private Hearts hearts;
-    [SerializeField]
     private Camera camera;
     public static Camera GetCamera { get; private set; }
     [SerializeField]
@@ -15,6 +13,9 @@ public class Player : Actor
     private const float moveSpeed = 10;
     private const float jumpSpeed = 25f;
     private Timer timer = new Timer();
+
+    [SerializeField]
+    private AudioSource jumpAudio;
 
     private bool isJumping;
 
@@ -32,8 +33,6 @@ public class Player : Actor
     {
         CheckInput();
     }
-
-
 
     private void CheckInput()
     {
@@ -58,6 +57,7 @@ public class Player : Actor
 
     private IEnumerator Jump()
     {
+        jumpAudio.Play();
         isJumping = true;
         timer.Set(0.3f);
         while (!timer.Done())
