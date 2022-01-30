@@ -963,6 +963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 9026033948839132149}
+  jumpAudio: {fileID: 4597488320324297675}
 --- !u!143 &9026033948839132149
 CharacterController:
   m_ObjectHideFlags: 0
