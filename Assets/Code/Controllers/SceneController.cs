@@ -8,7 +8,8 @@ public enum EScenes
     Intro,
     InGame,
     GameWon,
-    GameOver
+    GameOver,
+    Credits
 }
 
 public class SceneController : Manager
