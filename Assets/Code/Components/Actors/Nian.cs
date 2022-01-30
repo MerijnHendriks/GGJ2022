@@ -14,6 +14,14 @@ public class Nian : Actor
         moveDirection = (transform.rotation.y == 0 ? MoveDirection.MoveRight : MoveDirection.MoveLeft);
     }
 
+    ////private void OnCollisionEnter(Collision collision)
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    print(other.transform);
+    //    if (other.transform.tag == "Player")
+    //        print("LoseHeart");
+    //}
+
     private void Update()
     {
         characterController.Move(new Vector2(movementSpeed * (int)moveDirection, Physics.gravity.y) * Time.deltaTime);

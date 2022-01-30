@@ -4,6 +4,8 @@ using UnityEngine;
 public class Player : Actor
 {
     [SerializeField]
+    private Hearts hearts;
+    [SerializeField]
     private Camera camera;
     public static Camera GetCamera { get; private set; }
     [SerializeField]
@@ -31,6 +33,8 @@ public class Player : Actor
         CheckInput();
     }
 
+
+
     private void CheckInput()
     {
         int x = 0;
@@ -49,7 +53,7 @@ public class Player : Actor
         if (InputController.IsPressed("JUMP") && !isJumping && rigidBody.isGrounded)
             StartCoroutine(Jump());
 
-        rigidBody.Move(new Vector3(x * moveSpeed, isJumping ? Physics.gravity.y + jumpSpeed : Physics.gravity.y , 0) * Time.deltaTime);
+        rigidBody.Move(new Vector3(x * moveSpeed, isJumping ? Physics.gravity.y + jumpSpeed : Physics.gravity.y, 0) * Time.deltaTime);
     }
 
     private IEnumerator Jump()
@@ -63,10 +67,11 @@ public class Player : Actor
 
     public void Teleport(Vector3 position)
     {
-        StartCoroutine(Teleporting(position));
         transform.position = position;
-        if(position == Vector3.zero)
+        if (position == new Vector3(1, 1, 0))
             GameManager.Instance.GetManager<SceneController>().LoadScene(EScenes.GameWon);
+        else
+            StartCoroutine(Teleporting(position));
     }
 
     private IEnumerator Teleporting(Vector3 position)
