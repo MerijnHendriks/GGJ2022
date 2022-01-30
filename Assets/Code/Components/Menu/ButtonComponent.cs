@@ -28,4 +28,18 @@ public class ButtonComponent : MonoBehaviour
     {
         sceneController.LoadScene(EScenes.MainMenu);
     }
+
+    public void OnClickLocale()
+    {
+        if (LocaleController.Locale == ELocales.English)
+        {
+            // switch to chinese
+            LocaleController.Locale = ELocales.Chinese;
+        }
+        else
+        {
+            // switch to english
+            LocaleController.Locale = ELocales.English;
+        }
+    }
 }
