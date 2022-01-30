@@ -68,7 +68,7 @@ public class Player : Actor
     public void Teleport(Vector3 position)
     {
         transform.position = position;
-        if (position == new Vector3(1, 1, 0))
+        if (position == Vector3.zero)
             GameManager.Instance.GetManager<SceneController>().LoadScene(EScenes.GameWon);
         else
             StartCoroutine(Teleporting(position));
